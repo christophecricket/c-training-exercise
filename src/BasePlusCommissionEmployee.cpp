@@ -43,6 +43,14 @@ string BasePlusCommissionEmployee::toString() const {
    return output.str();
 }
 
+double BasePlusCommissionEmployee::getSalary() const {
+   return getBaseSalary();
+}
+
+double BasePlusCommissionEmployee::getCommission() const {
+   return BasePlusCommissionEmployee::getGrossSales();
+}
+
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *

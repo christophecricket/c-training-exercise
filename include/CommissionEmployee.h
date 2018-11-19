@@ -21,6 +21,7 @@ public:
    // keyword virtual signals intent to override                 
    virtual double earnings() const override; // calculate earnings        
    virtual std::string toString() const override; // string representation
+   virtual double getCommission() const override;
 private:
    double grossSales; // gross weekly sales       
    double commissionRate; // commission percentage

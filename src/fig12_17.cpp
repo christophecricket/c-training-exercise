@@ -16,6 +16,7 @@ void virtualViaReference(const Employee&); // prototype
 Employee* addEmployeeFromUser();
 void printSummary(vector<Employee *>);
 void printSalaries(vector<Employee *>, int);
+void printSales(vector<Employee *>);
 
 int main() {
 		// create derived-class objects                        
@@ -39,7 +40,7 @@ int main() {
 
 		int menu_option;
 
-		cout << "Welcome to the best c++ program you'll ever use! Press 1 to view a summary of users, or 2 to input a new user, or 3 to print salaries to be paid" << endl;
+		cout << "Welcome (back) to the best c++ program you'll ever use! Press 1 to view a summary of users, or 2 to input a new user, or 3 to print salaries to be paid, or 4 to print total sales" << endl;
 		cin >> menu_option;
 
 		switch (menu_option){
@@ -54,9 +55,17 @@ int main() {
 		 		break;
 		 	}
 		 	case 3:{
-		 		printSalaries(employees,3);
+            cout << "Please enter number of weeks:" << endl;
+            int weeks;
+            cin >> weeks;
+
+		 		printSalaries(employees,weeks);
 		 		break;
 		 	}
+         case 4:{
+            printSales(employees);
+            break;
+         }
 		}
 	}
 }
@@ -75,8 +84,10 @@ void virtualViaReference(const Employee& baseClassRef) {
       << "\nearned $" << baseClassRef.earnings() << "\n\n";
 }
 
+
+//not sure if the break statements are required if all my switch cases end with return.
 Employee* addEmployeeFromUser(){
-   cout << "Enter 1 for salaried employee, 2 for commissionned employee, and 3 for the other one :)" << endl;
+   cout << "Enter 1 for salaried employee, 2 for commissionned employee, and 3 for the other one with the long name :) :\n" << endl;
 
    int employee_type = 0;
 
@@ -92,13 +103,13 @@ Employee* addEmployeeFromUser(){
          double salary;
 
 
-         cout << "First Name" << endl;
+         cout << "First Name:" << endl;
          cin >> first_name;
-         cout << "Last Name" << endl;
+         cout << "Last Name:" << endl;
          cin >> last_name;
-         cout << "Social Security Number" << endl;
+         cout << "Social Security Number:" << endl;
          cin >> ss_no;
-         cout << "Salary" << endl;
+         cout << "Salary:" << endl;
          cin >> salary;
 
          SalariedEmployee *ptr = new SalariedEmployee(first_name,last_name,ss_no,salary);
@@ -114,15 +125,15 @@ Employee* addEmployeeFromUser(){
          double sales;
          double rate;
 
-         cout << "First Name" << endl;
+         cout << "First Name:" << endl;
          cin >> first_name;
-         cout << "Last Name" << endl;
+         cout << "Last Name:" << endl;
          cin >> last_name;
-         cout << "Social Security Number" << endl;
+         cout << "Social Security Number:" << endl;
          cin >> ss_no;
-         cout << "Sales (Gross)" << endl;
+         cout << "Sales (Gross):" << endl;
          cin >> sales;
-         cout << "Commission Rate" << endl;
+         cout << "Commission Rate:" << endl;
          cin >> rate;
 
          CommissionEmployee *ptr = new CommissionEmployee(first_name,last_name,ss_no,sales,rate);
@@ -139,17 +150,17 @@ Employee* addEmployeeFromUser(){
          double rate;
          double salary;
 
-         cout << "First Name" << endl;
+         cout << "First Name:" << endl;
          cin >> first_name;
-         cout << "Last Name" << endl;
+         cout << "Last Name:" << endl;
          cin >> last_name;
-         cout << "Social Security Number" << endl;
+         cout << "Social Security Number:" << endl;
          cin >> ss_no;
-         cout << "Sales (Gross)" << endl;
+         cout << "Sales (Gross):" << endl;
          cin >> sales;
-         cout << "Commission Rate" << endl;
+         cout << "Commission Rate:" << endl;
          cin >> rate;
-         cout << "Salary" << endl;
+         cout << "Salary:" << endl;
          cin >> salary;
 
          BasePlusCommissionEmployee *ptr = new BasePlusCommissionEmployee(first_name,last_name,ss_no,sales,rate,salary);
@@ -160,28 +171,33 @@ Employee* addEmployeeFromUser(){
 }
 
 void printSummary(vector<Employee *> employees){
-   	for (int i = 0; i < employees.size(); ++i){   	
-   		cout << employees.at(i)->toString() << endl;
-   		cout << "\n" << endl;
-   	}
+   cout << "" << endl;
+
+	for (int i = 0; i < employees.size(); ++i){   	
+		cout << employees.at(i)->toString() << endl;
+		cout << "\n" << endl;
+	}
 }
 
 void printSalaries(vector<Employee *> employees, int weeks){
 	double total_salaries = 0;
 
 	for (int i = 0; i < employees.size(); ++i){
-		const type_info& what_type = typeid(employees.at(i));
-		if (what_type == typeid(employees.at(0))){
-			cout << "you just did the thing" << endl;//total_salaries += employees.at(i)->earnings();
-		}
-		if (what_type == typeid(employees.at(2))){
-			cout << "you just did the thing again" << endl;//total_salaries += employees.at(i)->getBaseSalary();
-		}
+		total_salaries += employees.at(i)->getSalary();
 	}
 	total_salaries *= weeks;
-	cout << "The total amount of salaries for the next " << weeks << " weeks is " << total_salaries << "." << endl;
+	cout << "The total amount of salaries for the next " << weeks << " weeks is " << total_salaries << ".\n" << endl;
 }
 
+void printSales(vector<Employee *> employees){
+   double total_sales = 0;
+
+   for (int i = 0; i < employees.size(); ++i){
+      total_sales += employees.at(i)->getCommission();
+   }
+
+   cout << "The total amount of sales is " << total_sales << ". \n" << endl;
+}
 
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *

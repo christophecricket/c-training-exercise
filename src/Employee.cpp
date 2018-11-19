@@ -38,6 +38,16 @@ string Employee::toString() const {
       "\nsocial security number: "s + getSocialSecurityNumber();
 }
 
+//not pure virtual
+double Employee::getSalary() const {
+	return 0;
+}
+
+//not pure virtual
+double Employee::getCommission() const {
+	return 0;
+}
+
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *

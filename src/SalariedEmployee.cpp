@@ -39,6 +39,10 @@ string SalariedEmployee::toString() const {
    return output.str();
 }
 
+double SalariedEmployee::getSalary() const {
+   return getWeeklySalary();
+}
+
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *

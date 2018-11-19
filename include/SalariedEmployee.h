@@ -18,6 +18,7 @@ public:
    // keyword virtual signals intent to override               
    virtual double earnings() const override; // calculate earnings        
    virtual std::string toString() const override; // string representation
+   virtual double getSalary() const override;
 private:
    double weeklySalary; // salary per week
 };

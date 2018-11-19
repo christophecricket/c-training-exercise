@@ -21,7 +21,9 @@ public:
 
    // pure virtual function makes Employee an abstract base class
    virtual double earnings() const = 0; // pure virtual          
-   virtual std::string toString() const; // virtual              
+   virtual std::string toString() const; // virtual 
+   virtual double getSalary() const; //virtual
+   virtual double getCommission() const; //virtual           
 private:
    std::string firstName;
    std::string lastName;

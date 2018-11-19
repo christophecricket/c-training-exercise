@@ -55,6 +55,11 @@ string CommissionEmployee::toString() const {
    return output.str();
 }
 
+//get commission from the object, overriding the default
+double CommissionEmployee::getCommission() const {
+   return getGrossSales();
+}
+
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *
