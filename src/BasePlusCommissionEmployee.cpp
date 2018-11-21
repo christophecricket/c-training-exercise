@@ -6,8 +6,8 @@
 #include "BasePlusCommissionEmployee.h"
 using namespace std;
 
-//
-// constructor 
+///
+/// constructor 
 BasePlusCommissionEmployee::BasePlusCommissionEmployee(
    const string& first, const string& last, const string& ssn,
    double sales, double rate, double salary)
@@ -15,8 +15,8 @@ BasePlusCommissionEmployee::BasePlusCommissionEmployee(
    setBaseSalary(salary); // validate and store base salary
 }
 
-//
-// set base salary
+///
+/// set base salary
 void BasePlusCommissionEmployee::setBaseSalary(double salary) {
    if (salary < 0.0) {
       throw invalid_argument("Salary must be >= 0.0");
@@ -25,20 +25,20 @@ void BasePlusCommissionEmployee::setBaseSalary(double salary) {
    baseSalary = salary;
 }
 
-//
-// return base salary
+///
+/// return base salary
 double BasePlusCommissionEmployee::getBaseSalary() const {
    return baseSalary;
 }
 
-// calculate earnings;
-// override virtual function earnings in CommissionEmployee
+/// calculate earnings;
+/// override virtual function earnings in CommissionEmployee
 double BasePlusCommissionEmployee::earnings() const {
    return getBaseSalary() + CommissionEmployee::earnings();
 }
 
-//
-// return a string representation of a BasePlusCommissionEmployee
+///
+/// return a string representation of a BasePlusCommissionEmployee
 string BasePlusCommissionEmployee::toString() const {
    ostringstream output;
    output << fixed << setprecision(2);
@@ -48,15 +48,15 @@ string BasePlusCommissionEmployee::toString() const {
 }
 
 
-//Overwrites getSalary() in Employee
-//Allows for the calling of the function for any type of Employee
+///Overwrites getSalary() in Employee
+///Allows for the calling of the function for any type of Employee
 double BasePlusCommissionEmployee::getSalary() const {
    return getBaseSalary();
 }
 
 
-//Overwrites getCommission() in Employee
-//Allows for the calling of the function for any type of Employee
+///Overwrites getCommission() in Employee
+///Allows for the calling of the function for any type of Employee
 double BasePlusCommissionEmployee::getCommission() const {
    return BasePlusCommissionEmployee::getGrossSales();
 }

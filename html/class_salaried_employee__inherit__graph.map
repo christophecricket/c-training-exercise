@@ -1,4 +1,4 @@
 <map id="SalariedEmployee" name="SalariedEmployee">
-<area shape="rect" id="node1" title=" " alt="" coords="5,83,160,112"/>
-<area shape="rect" id="node2" href="$class_employee.html" title=" " alt="" coords="35,5,130,35"/>
+<area shape="rect" id="node1" title="Represents an employee who gets paid a salary as his only source of income." alt="" coords="5,83,160,112"/>
+<area shape="rect" id="node2" href="$class_employee.html" title="Represents the Employee base class." alt="" coords="35,5,130,35"/>
 </map>

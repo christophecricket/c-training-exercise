@@ -70,22 +70,22 @@ int main() {
 	}
 }
 
-// call Employee virtual functions toString and earnings off a   
-// base-class pointer using dynamic binding                   
+/// call Employee virtual functions toString and earnings off a   
+/// base-class pointer using dynamic binding                   
 void virtualViaPointer(const Employee* const baseClassPtr) {
    cout << baseClassPtr->toString()
       << "\nearned $" << baseClassPtr->earnings() << "\n\n";
 }
 
-// call Employee virtual functions toString and earnings off a  
-// base-class reference using dynamic binding                
+/// call Employee virtual functions toString and earnings off a  
+/// base-class reference using dynamic binding                
 void virtualViaReference(const Employee& baseClassRef) {
    cout << baseClassRef.toString()
       << "\nearned $" << baseClassRef.earnings() << "\n\n";
 }
 
-//
-//Returns a pointer to a new employee created by the user
+///
+///Returns a pointer to a new employee created by the user
 Employee* addEmployeeFromUser(){
    cout << "Enter 1 for salaried employee, 2 for commissionned employee, and 3 for the other one with the long name :) :\n" << endl;
 
@@ -170,8 +170,8 @@ Employee* addEmployeeFromUser(){
    }
 }
 
-//
-//prints the summary of all employees
+///
+///prints the summary of all employees
 void printSummary(vector<Employee *> employees){
    cout << "" << endl;
 
@@ -181,8 +181,8 @@ void printSummary(vector<Employee *> employees){
 	}
 }
 
-//
-//prints the total amount of salaries to be paid to the employees
+///
+///prints the total amount of salaries to be paid to the employees
 void printSalaries(vector<Employee *> employees, int weeks){
 	double total_salaries = 0;
 
@@ -193,8 +193,8 @@ void printSalaries(vector<Employee *> employees, int weeks){
 	cout << "The total amount of salaries for the next " << weeks << " weeks is " << total_salaries << ".\n" << endl;
 }
 
-//
-//prints the total amount of sales made by the employees who work on commission
+///
+///prints the total amount of sales made by the employees who work on commission
 void printSales(vector<Employee *> employees){
    double total_sales = 0;
 

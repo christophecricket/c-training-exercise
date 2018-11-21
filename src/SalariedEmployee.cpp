@@ -6,16 +6,16 @@
 #include "SalariedEmployee.h" // SalariedEmployee class definition
 using namespace std;
 
-//
-// constructor 
+///
+/// constructor 
 SalariedEmployee::SalariedEmployee(const string& first,
    const string& last, const string& ssn, double salary)
    : Employee(first, last, ssn) {
    setWeeklySalary(salary);
 }
 
-//
-// set salary
+///
+/// set salary
 void SalariedEmployee::setWeeklySalary(double salary) {
    if (salary < 0.0) {
       throw invalid_argument("Weekly salary must be >= 0.0");
@@ -24,16 +24,16 @@ void SalariedEmployee::setWeeklySalary(double salary) {
    weeklySalary = salary;
 }
 
-//
-// return salary
+///
+/// return salary
 double SalariedEmployee::getWeeklySalary() const { return weeklySalary; }
 
 // calculate earnings; 
 // override pure virtual function earnings in Employee
 double SalariedEmployee::earnings() const { return getWeeklySalary(); }
 
-//
-// return a string representation of SalariedEmployee's information 
+///
+/// return a string representation of SalariedEmployee's information 
 string SalariedEmployee::toString() const {
    ostringstream output;
    output << fixed << setprecision(2);
@@ -43,8 +43,8 @@ string SalariedEmployee::toString() const {
    return output.str();
 }
 
-//Overwrites getSalary() in Employee
-//Allows for the calling of the function for any type of Employee
+///Overwrites getSalary() in Employee
+///Allows for the calling of the function for any type of Employee
 double SalariedEmployee::getSalary() const {
    return getWeeklySalary();
 }

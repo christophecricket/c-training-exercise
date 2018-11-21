@@ -6,8 +6,8 @@
 #include "CommissionEmployee.h" // CommissionEmployee class definition
 using namespace std;
 
-//
-// constructor 
+///
+/// constructor 
 CommissionEmployee::CommissionEmployee(const string &first,
    const string &last, const string &ssn, double sales, double rate)
    : Employee(first, last, ssn) {
@@ -15,8 +15,8 @@ CommissionEmployee::CommissionEmployee(const string &first,
    setCommissionRate(rate);
 }
 
-//
-// set gross sales amount
+///
+/// set gross sales amount
 void CommissionEmployee::setGrossSales(double sales) {
    if (sales < 0.0) {
       throw invalid_argument("Gross sales must be >= 0.0");
@@ -25,12 +25,12 @@ void CommissionEmployee::setGrossSales(double sales) {
    grossSales = sales;
 }
 
-//
-// return gross sales amount
+///
+/// return gross sales amount
 double CommissionEmployee::getGrossSales() const { return grossSales; }
 
-//
-// set commission rate
+///
+/// set commission rate
 void CommissionEmployee::setCommissionRate(double rate) {
    if (rate <= 0.0 || rate > 1.0) {
       throw invalid_argument("Commission rate must be > 0.0 and < 1.0");
@@ -39,20 +39,20 @@ void CommissionEmployee::setCommissionRate(double rate) {
    commissionRate = rate;
 }
 
-//
-// return commission rate
+///
+/// return commission rate
 double CommissionEmployee::getCommissionRate() const {
    return commissionRate;
 }
 
-//
-// calculate earnings; override pure virtual function earnings in Employee
+///
+/// calculate earnings; override pure virtual function earnings in Employee
 double CommissionEmployee::earnings() const {
    return getCommissionRate() * getGrossSales();
 }
 
-//
-// return a string representation of CommissionEmployee's information 
+///
+/// return a string representation of CommissionEmployee's information 
 string CommissionEmployee::toString() const {
    ostringstream output;
    output << fixed << setprecision(2);
@@ -62,8 +62,8 @@ string CommissionEmployee::toString() const {
    return output.str();
 }
 
-//Overwrites getCommission() in Employee
-//Allows for the calling of getCommission() on any type of Employee
+///Overwrites getCommission() in Employee
+///Allows for the calling of getCommission() on any type of Employee
 double CommissionEmployee::getCommission() const {
    return getGrossSales();
 }

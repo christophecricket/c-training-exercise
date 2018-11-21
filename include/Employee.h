@@ -5,8 +5,8 @@
 
 #include <string> // C++ standard string class
 
-//
-//Represents the Employee base class
+///
+///Represents the Employee base class
 class Employee {
 public:
    Employee(const std::string&, const std::string&, const std::string &);
