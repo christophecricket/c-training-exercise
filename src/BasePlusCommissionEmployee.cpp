@@ -6,6 +6,7 @@
 #include "BasePlusCommissionEmployee.h"
 using namespace std;
 
+//
 // constructor 
 BasePlusCommissionEmployee::BasePlusCommissionEmployee(
    const string& first, const string& last, const string& ssn,
@@ -14,6 +15,7 @@ BasePlusCommissionEmployee::BasePlusCommissionEmployee(
    setBaseSalary(salary); // validate and store base salary
 }
 
+//
 // set base salary
 void BasePlusCommissionEmployee::setBaseSalary(double salary) {
    if (salary < 0.0) {
@@ -23,6 +25,7 @@ void BasePlusCommissionEmployee::setBaseSalary(double salary) {
    baseSalary = salary;
 }
 
+//
 // return base salary
 double BasePlusCommissionEmployee::getBaseSalary() const {
    return baseSalary;
@@ -34,6 +37,7 @@ double BasePlusCommissionEmployee::earnings() const {
    return getBaseSalary() + CommissionEmployee::earnings();
 }
 
+//
 // return a string representation of a BasePlusCommissionEmployee
 string BasePlusCommissionEmployee::toString() const {
    ostringstream output;
@@ -43,10 +47,16 @@ string BasePlusCommissionEmployee::toString() const {
    return output.str();
 }
 
+
+//Overwrites getSalary() in Employee
+//Allows for the calling of the function for any type of Employee
 double BasePlusCommissionEmployee::getSalary() const {
    return getBaseSalary();
 }
 
+
+//Overwrites getCommission() in Employee
+//Allows for the calling of the function for any type of Employee
 double BasePlusCommissionEmployee::getCommission() const {
    return BasePlusCommissionEmployee::getGrossSales();
 }

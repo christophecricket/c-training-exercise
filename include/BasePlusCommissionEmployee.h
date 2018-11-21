@@ -6,6 +6,8 @@
 #include <string> // C++ standard string class
 #include "CommissionEmployee.h" // CommissionEmployee class definition
 
+//
+//Represents an employee who gets paid both a salary and a commission
 class BasePlusCommissionEmployee : public CommissionEmployee {
 public:
    BasePlusCommissionEmployee(const std::string&, const std::string&,

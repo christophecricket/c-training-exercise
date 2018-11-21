@@ -6,6 +6,7 @@
 #include "CommissionEmployee.h" // CommissionEmployee class definition
 using namespace std;
 
+//
 // constructor 
 CommissionEmployee::CommissionEmployee(const string &first,
    const string &last, const string &ssn, double sales, double rate)
@@ -14,6 +15,7 @@ CommissionEmployee::CommissionEmployee(const string &first,
    setCommissionRate(rate);
 }
 
+//
 // set gross sales amount
 void CommissionEmployee::setGrossSales(double sales) {
    if (sales < 0.0) {
@@ -23,9 +25,11 @@ void CommissionEmployee::setGrossSales(double sales) {
    grossSales = sales;
 }
 
+//
 // return gross sales amount
 double CommissionEmployee::getGrossSales() const { return grossSales; }
 
+//
 // set commission rate
 void CommissionEmployee::setCommissionRate(double rate) {
    if (rate <= 0.0 || rate > 1.0) {
@@ -35,16 +39,19 @@ void CommissionEmployee::setCommissionRate(double rate) {
    commissionRate = rate;
 }
 
+//
 // return commission rate
 double CommissionEmployee::getCommissionRate() const {
    return commissionRate;
 }
 
+//
 // calculate earnings; override pure virtual function earnings in Employee
 double CommissionEmployee::earnings() const {
    return getCommissionRate() * getGrossSales();
 }
 
+//
 // return a string representation of CommissionEmployee's information 
 string CommissionEmployee::toString() const {
    ostringstream output;
@@ -55,7 +62,8 @@ string CommissionEmployee::toString() const {
    return output.str();
 }
 
-//get commission from the object, overriding the default
+//Overwrites getCommission() in Employee
+//Allows for the calling of getCommission() on any type of Employee
 double CommissionEmployee::getCommission() const {
    return getGrossSales();
 }

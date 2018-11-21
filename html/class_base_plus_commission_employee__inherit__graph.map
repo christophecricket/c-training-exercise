@@ -1,0 +1,5 @@
+<map id="BasePlusCommissionEmployee" name="BasePlusCommissionEmployee">
+<area shape="rect" id="node1" title=" " alt="" coords="5,160,257,189"/>
+<area shape="rect" id="node2" href="$class_commission_employee.html" title=" " alt="" coords="40,83,223,112"/>
+<area shape="rect" id="node3" href="$class_employee.html" title=" " alt="" coords="84,5,179,35"/>
+</map>

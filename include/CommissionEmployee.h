@@ -6,6 +6,8 @@
 #include <string> // C++ standard string class
 #include "Employee.h" // Employee class definition
 
+//
+//Represents an employee who gets paid a commission as his only source of income
 class CommissionEmployee : public Employee {
 public:
    CommissionEmployee(const std::string&, const std::string&,
